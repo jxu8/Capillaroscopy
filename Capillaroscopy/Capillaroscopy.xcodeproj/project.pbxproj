@@ -1,0 +1,526 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		39413D251EFC5B050028AE07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39413D241EFC5B050028AE07 /* AppDelegate.swift */; };
+		39413D271EFC5B050028AE07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39413D261EFC5B050028AE07 /* ViewController.swift */; };
+		39413D2A1EFC5B050028AE07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39413D281EFC5B050028AE07 /* Main.storyboard */; };
+		39413D2C1EFC5B050028AE07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39413D2B1EFC5B050028AE07 /* Assets.xcassets */; };
+		39413D2F1EFC5B050028AE07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39413D2D1EFC5B050028AE07 /* LaunchScreen.storyboard */; };
+		39413D3A1EFC5B050028AE07 /* CapillaroscopyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39413D391EFC5B050028AE07 /* CapillaroscopyTests.swift */; };
+		39413D451EFC5B050028AE07 /* CapillaroscopyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39413D441EFC5B050028AE07 /* CapillaroscopyUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		39413D361EFC5B050028AE07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39413D191EFC5B050028AE07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39413D201EFC5B050028AE07;
+			remoteInfo = Capillaroscopy;
+		};
+		39413D411EFC5B050028AE07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39413D191EFC5B050028AE07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39413D201EFC5B050028AE07;
+			remoteInfo = Capillaroscopy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		39413D211EFC5B050028AE07 /* Capillaroscopy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capillaroscopy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		39413D241EFC5B050028AE07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		39413D261EFC5B050028AE07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		39413D291EFC5B050028AE07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		39413D2B1EFC5B050028AE07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		39413D2E1EFC5B050028AE07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		39413D301EFC5B050028AE07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39413D351EFC5B050028AE07 /* CapillaroscopyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapillaroscopyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		39413D391EFC5B050028AE07 /* CapillaroscopyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapillaroscopyTests.swift; sourceTree = "<group>"; };
+		39413D3B1EFC5B050028AE07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39413D401EFC5B050028AE07 /* CapillaroscopyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapillaroscopyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		39413D441EFC5B050028AE07 /* CapillaroscopyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapillaroscopyUITests.swift; sourceTree = "<group>"; };
+		39413D461EFC5B050028AE07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		39413D1E1EFC5B050028AE07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39413D321EFC5B050028AE07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39413D3D1EFC5B050028AE07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		39413D181EFC5B050028AE07 = {
+			isa = PBXGroup;
+			children = (
+				39413D231EFC5B050028AE07 /* Capillaroscopy */,
+				39413D381EFC5B050028AE07 /* CapillaroscopyTests */,
+				39413D431EFC5B050028AE07 /* CapillaroscopyUITests */,
+				39413D221EFC5B050028AE07 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		39413D221EFC5B050028AE07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39413D211EFC5B050028AE07 /* Capillaroscopy.app */,
+				39413D351EFC5B050028AE07 /* CapillaroscopyTests.xctest */,
+				39413D401EFC5B050028AE07 /* CapillaroscopyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		39413D231EFC5B050028AE07 /* Capillaroscopy */ = {
+			isa = PBXGroup;
+			children = (
+				39413D241EFC5B050028AE07 /* AppDelegate.swift */,
+				39413D261EFC5B050028AE07 /* ViewController.swift */,
+				39413D281EFC5B050028AE07 /* Main.storyboard */,
+				39413D2B1EFC5B050028AE07 /* Assets.xcassets */,
+				39413D2D1EFC5B050028AE07 /* LaunchScreen.storyboard */,
+				39413D301EFC5B050028AE07 /* Info.plist */,
+			);
+			path = Capillaroscopy;
+			sourceTree = "<group>";
+		};
+		39413D381EFC5B050028AE07 /* CapillaroscopyTests */ = {
+			isa = PBXGroup;
+			children = (
+				39413D391EFC5B050028AE07 /* CapillaroscopyTests.swift */,
+				39413D3B1EFC5B050028AE07 /* Info.plist */,
+			);
+			path = CapillaroscopyTests;
+			sourceTree = "<group>";
+		};
+		39413D431EFC5B050028AE07 /* CapillaroscopyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				39413D441EFC5B050028AE07 /* CapillaroscopyUITests.swift */,
+				39413D461EFC5B050028AE07 /* Info.plist */,
+			);
+			path = CapillaroscopyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		39413D201EFC5B050028AE07 /* Capillaroscopy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39413D491EFC5B050028AE07 /* Build configuration list for PBXNativeTarget "Capillaroscopy" */;
+			buildPhases = (
+				39413D1D1EFC5B050028AE07 /* Sources */,
+				39413D1E1EFC5B050028AE07 /* Frameworks */,
+				39413D1F1EFC5B050028AE07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Capillaroscopy;
+			productName = Capillaroscopy;
+			productReference = 39413D211EFC5B050028AE07 /* Capillaroscopy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		39413D341EFC5B050028AE07 /* CapillaroscopyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39413D4C1EFC5B050028AE07 /* Build configuration list for PBXNativeTarget "CapillaroscopyTests" */;
+			buildPhases = (
+				39413D311EFC5B050028AE07 /* Sources */,
+				39413D321EFC5B050028AE07 /* Frameworks */,
+				39413D331EFC5B050028AE07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				39413D371EFC5B050028AE07 /* PBXTargetDependency */,
+			);
+			name = CapillaroscopyTests;
+			productName = CapillaroscopyTests;
+			productReference = 39413D351EFC5B050028AE07 /* CapillaroscopyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		39413D3F1EFC5B050028AE07 /* CapillaroscopyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39413D4F1EFC5B050028AE07 /* Build configuration list for PBXNativeTarget "CapillaroscopyUITests" */;
+			buildPhases = (
+				39413D3C1EFC5B050028AE07 /* Sources */,
+				39413D3D1EFC5B050028AE07 /* Frameworks */,
+				39413D3E1EFC5B050028AE07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				39413D421EFC5B050028AE07 /* PBXTargetDependency */,
+			);
+			name = CapillaroscopyUITests;
+			productName = CapillaroscopyUITests;
+			productReference = 39413D401EFC5B050028AE07 /* CapillaroscopyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		39413D191EFC5B050028AE07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Xu, James (NIH/NIBIB) [F]";
+				TargetAttributes = {
+					39413D201EFC5B050028AE07 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					39413D341EFC5B050028AE07 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 39413D201EFC5B050028AE07;
+					};
+					39413D3F1EFC5B050028AE07 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 39413D201EFC5B050028AE07;
+					};
+				};
+			};
+			buildConfigurationList = 39413D1C1EFC5B050028AE07 /* Build configuration list for PBXProject "Capillaroscopy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 39413D181EFC5B050028AE07;
+			productRefGroup = 39413D221EFC5B050028AE07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				39413D201EFC5B050028AE07 /* Capillaroscopy */,
+				39413D341EFC5B050028AE07 /* CapillaroscopyTests */,
+				39413D3F1EFC5B050028AE07 /* CapillaroscopyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		39413D1F1EFC5B050028AE07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39413D2F1EFC5B050028AE07 /* LaunchScreen.storyboard in Resources */,
+				39413D2C1EFC5B050028AE07 /* Assets.xcassets in Resources */,
+				39413D2A1EFC5B050028AE07 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39413D331EFC5B050028AE07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39413D3E1EFC5B050028AE07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		39413D1D1EFC5B050028AE07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39413D271EFC5B050028AE07 /* ViewController.swift in Sources */,
+				39413D251EFC5B050028AE07 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39413D311EFC5B050028AE07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39413D3A1EFC5B050028AE07 /* CapillaroscopyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39413D3C1EFC5B050028AE07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39413D451EFC5B050028AE07 /* CapillaroscopyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		39413D371EFC5B050028AE07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39413D201EFC5B050028AE07 /* Capillaroscopy */;
+			targetProxy = 39413D361EFC5B050028AE07 /* PBXContainerItemProxy */;
+		};
+		39413D421EFC5B050028AE07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39413D201EFC5B050028AE07 /* Capillaroscopy */;
+			targetProxy = 39413D411EFC5B050028AE07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		39413D281EFC5B050028AE07 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39413D291EFC5B050028AE07 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		39413D2D1EFC5B050028AE07 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39413D2E1EFC5B050028AE07 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		39413D471EFC5B050028AE07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		39413D481EFC5B050028AE07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		39413D4A1EFC5B050028AE07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Capillaroscopy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jamesxu.Capillaroscopy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		39413D4B1EFC5B050028AE07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Capillaroscopy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jamesxu.Capillaroscopy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		39413D4D1EFC5B050028AE07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CapillaroscopyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jamesxu.CapillaroscopyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Capillaroscopy.app/Capillaroscopy";
+			};
+			name = Debug;
+		};
+		39413D4E1EFC5B050028AE07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CapillaroscopyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jamesxu.CapillaroscopyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Capillaroscopy.app/Capillaroscopy";
+			};
+			name = Release;
+		};
+		39413D501EFC5B050028AE07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = CapillaroscopyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jamesxu.CapillaroscopyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Capillaroscopy;
+			};
+			name = Debug;
+		};
+		39413D511EFC5B050028AE07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = CapillaroscopyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jamesxu.CapillaroscopyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Capillaroscopy;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		39413D1C1EFC5B050028AE07 /* Build configuration list for PBXProject "Capillaroscopy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39413D471EFC5B050028AE07 /* Debug */,
+				39413D481EFC5B050028AE07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39413D491EFC5B050028AE07 /* Build configuration list for PBXNativeTarget "Capillaroscopy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39413D4A1EFC5B050028AE07 /* Debug */,
+				39413D4B1EFC5B050028AE07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		39413D4C1EFC5B050028AE07 /* Build configuration list for PBXNativeTarget "CapillaroscopyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39413D4D1EFC5B050028AE07 /* Debug */,
+				39413D4E1EFC5B050028AE07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		39413D4F1EFC5B050028AE07 /* Build configuration list for PBXNativeTarget "CapillaroscopyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39413D501EFC5B050028AE07 /* Debug */,
+				39413D511EFC5B050028AE07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 39413D191EFC5B050028AE07 /* Project object */;
+}
