@@ -45,7 +45,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     //MARK: Actions
-    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+    @IBAction func selectImageFromPhotoLibrary(_ sender: UIButton) {
         
         //UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
@@ -56,6 +56,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //Make sure ViewController is notified when the user picks an image.
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
+
     }
 
 }
