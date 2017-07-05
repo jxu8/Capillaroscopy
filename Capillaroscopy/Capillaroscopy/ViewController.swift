@@ -16,7 +16,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let openCVWrapper = OpenCVWrapper()
+        openCVWrapper.exampleOpenCVFunction()
     }
 
     override func didReceiveMemoryWarning() {

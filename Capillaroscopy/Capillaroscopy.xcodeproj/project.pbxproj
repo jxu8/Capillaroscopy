@@ -16,6 +16,8 @@
 		39413D451EFC5B050028AE07 /* CapillaroscopyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39413D441EFC5B050028AE07 /* CapillaroscopyUITests.swift */; };
 		395496CF1F05CCC50088429A /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395496CE1F05CCC50088429A /* DrawView.swift */; };
 		395496D11F05CCD80088429A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395496D01F05CCD80088429A /* Line.swift */; };
+		395496D31F05D2330088429A /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395496D21F05D2330088429A /* opencv2.framework */; };
+		395496D91F05D4500088429A /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 395496D81F05D4500088429A /* OpenCVWrapper.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		39413D461EFC5B050028AE07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		395496CE1F05CCC50088429A /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		395496D01F05CCD80088429A /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		395496D21F05D2330088429A /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		395496D41F05D2440088429A /* Capillaroscopy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Capillaroscopy-Bridging-Header.h"; sourceTree = "<group>"; };
+		395496D51F05D2440088429A /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
+		395496D81F05D4500088429A /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				395496D31F05D2330088429A /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,14 +108,18 @@
 		39413D231EFC5B050028AE07 /* Capillaroscopy */ = {
 			isa = PBXGroup;
 			children = (
+				395496D21F05D2330088429A /* opencv2.framework */,
 				39413D241EFC5B050028AE07 /* AppDelegate.swift */,
 				395496D01F05CCD80088429A /* Line.swift */,
+				395496D51F05D2440088429A /* OpenCVWrapper.h */,
+				395496D81F05D4500088429A /* OpenCVWrapper.mm */,
 				395496CE1F05CCC50088429A /* DrawView.swift */,
 				39413D261EFC5B050028AE07 /* ViewController.swift */,
 				39413D281EFC5B050028AE07 /* Main.storyboard */,
 				39413D2B1EFC5B050028AE07 /* Assets.xcassets */,
 				39413D2D1EFC5B050028AE07 /* LaunchScreen.storyboard */,
 				39413D301EFC5B050028AE07 /* Info.plist */,
+				395496D41F05D2440088429A /* Capillaroscopy-Bridging-Header.h */,
 			);
 			path = Capillaroscopy;
 			sourceTree = "<group>";
@@ -199,6 +210,7 @@
 				TargetAttributes = {
 					39413D201EFC5B050028AE07 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					39413D341EFC5B050028AE07 = {
@@ -266,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39413D271EFC5B050028AE07 /* ViewController.swift in Sources */,
+				395496D91F05D4500088429A /* OpenCVWrapper.mm in Sources */,
 				395496D11F05CCD80088429A /* Line.swift in Sources */,
 				39413D251EFC5B050028AE07 /* AppDelegate.swift in Sources */,
 				395496CF1F05CCC50088429A /* DrawView.swift in Sources */,
@@ -418,10 +431,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Capillaroscopy",
+				);
 				INFOPLIST_FILE = Capillaroscopy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jamesxu.Capillaroscopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Capillaroscopy/Capillaroscopy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -430,10 +450,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Capillaroscopy",
+				);
 				INFOPLIST_FILE = Capillaroscopy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jamesxu.Capillaroscopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Capillaroscopy/Capillaroscopy-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
