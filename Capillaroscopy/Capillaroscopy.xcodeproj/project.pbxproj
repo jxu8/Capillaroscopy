@@ -110,9 +110,9 @@
 			children = (
 				395496D21F05D2330088429A /* opencv2.framework */,
 				39413D241EFC5B050028AE07 /* AppDelegate.swift */,
-				395496D01F05CCD80088429A /* Line.swift */,
 				395496D51F05D2440088429A /* OpenCVWrapper.h */,
 				395496D81F05D4500088429A /* OpenCVWrapper.mm */,
+				395496D01F05CCD80088429A /* Line.swift */,
 				395496CE1F05CCC50088429A /* DrawView.swift */,
 				39413D261EFC5B050028AE07 /* ViewController.swift */,
 				39413D281EFC5B050028AE07 /* Main.storyboard */,

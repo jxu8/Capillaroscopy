@@ -13,6 +13,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK: Properties
     @IBOutlet weak var pictureNameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var drawViewCanvas: DrawView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
 
+    }
+
+    
+    @IBAction func resetDrawView(_ sender: UIButton) {
+        drawViewCanvas.resetDrawView()
     }
 
 }

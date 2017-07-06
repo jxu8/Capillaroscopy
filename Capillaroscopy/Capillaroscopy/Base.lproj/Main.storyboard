@@ -31,6 +31,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5Y-v2-kOp">
                                                 <rect key="frame" x="0.0" y="0.0" width="39" height="30"/>
                                                 <state key="normal" title="Reset"/>
+                                                <connections>
+                                                    <action selector="resetDrawView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zdf-ae-HlU"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Picture Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3y-aN-V9L">
                                                 <rect key="frame" x="39" y="0.0" width="187" height="30"/>
@@ -56,6 +59,7 @@
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFP-wr-zMI" customClass="DrawView" customModule="Capillaroscopy" customModuleProvider="target">
                                 <rect key="frame" x="16" y="81" width="343" height="576"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,16 +75,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="drawViewCanvas" destination="WFP-wr-zMI" id="SLX-rg-cAJ"/>
                         <outlet property="photoImageView" destination="ITH-0d-fKM" id="CuJ-b6-dtJ"/>
                         <outlet property="pictureNameLabel" destination="x3y-aN-V9L" id="Ij6-mV-dku"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="kRf-BR-Apk">
-                    <connections>
-                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="lRF-KU-JXc"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="123.68815592203899"/>
         </scene>
