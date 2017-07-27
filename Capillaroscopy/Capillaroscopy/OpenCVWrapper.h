@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface OpenCVWrapper : NSObject
-
--(void) exampleOpenCVFunction;
++(NSMutableArray *) getPixelIntensity: (UIImage *)image withEndpointsX: (NSMutableArray *)endpointsXCoordinates
+          withEndpointsY: (NSMutableArray *)endpointsYCoordinates;
 
 @end

@@ -25,32 +25,40 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OTq-2t-VKc">
                                 <rect key="frame" x="16" y="40" width="343" height="617"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DD6-Qv-DED">
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="DD6-Qv-DED">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5Y-v2-kOp">
-                                                <rect key="frame" x="0.0" y="0.0" width="39" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5Y-v2-kOp">
+                                                <rect key="frame" x="0.0" y="0.0" width="43" height="30"/>
                                                 <state key="normal" title="Reset"/>
                                                 <connections>
                                                     <action selector="resetDrawView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zdf-ae-HlU"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Picture Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3y-aN-V9L">
-                                                <rect key="frame" x="39" y="0.0" width="187" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkS-of-Yyz">
+                                                <rect key="frame" x="62" y="0.0" width="54" height="30"/>
+                                                <state key="normal" title="Analyze"/>
+                                                <connections>
+                                                    <action selector="showGraphPopUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ywf-In-NPc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0w-HI-Xu3">
+                                                <rect key="frame" x="135" y="0.0" width="84" height="30"/>
+                                                <state key="normal" title="Coordinates"/>
+                                                <connections>
+                                                    <action selector="getCoordinates:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wr9-km-mHq"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kie-Yp-z8j">
-                                                <rect key="frame" x="226" y="0.0" width="117" height="30"/>
-                                                <state key="normal" title="Choose a Picture"/>
+                                                <rect key="frame" x="238" y="0.0" width="105" height="30"/>
+                                                <state key="normal" title="Choose Picture"/>
                                                 <connections>
                                                     <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2dH-ef-CmK"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" translatesAutoresizingMaskIntoConstraints="NO" id="ITH-0d-fKM">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" translatesAutoresizingMaskIntoConstraints="NO" id="ITH-0d-fKM">
                                         <rect key="frame" x="0.0" y="40" width="343" height="577"/>
                                         <gestureRecognizers/>
                                     </imageView>
@@ -61,6 +69,13 @@
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t0E-L7-NaX" customClass="GraphPopUpView" customModule="Capillaroscopy" customModuleProvider="target">
+                                <rect key="frame" x="20" y="555" width="335" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="TbX-Rh-1oX" kind="embed" identifier="segueForGraphPopUp" id="rh7-7b-sYL"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -76,13 +91,40 @@
                     </view>
                     <connections>
                         <outlet property="drawViewCanvas" destination="WFP-wr-zMI" id="SLX-rg-cAJ"/>
+                        <outlet property="graphPopUp" destination="t0E-L7-NaX" id="ggP-6f-HLj"/>
                         <outlet property="photoImageView" destination="ITH-0d-fKM" id="CuJ-b6-dtJ"/>
-                        <outlet property="pictureNameLabel" destination="x3y-aN-V9L" id="Ij6-mV-dku"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="123.68815592203899"/>
+        </scene>
+        <!--Graph Pop Up View Controller-->
+        <scene sceneID="WYj-63-kxk">
+            <objects>
+                <viewController id="TbX-Rh-1oX" customClass="GraphPopUpViewController" customModule="Capillaroscopy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e1X-oK-2N5" customClass="GraphPopUpView" customModule="Capillaroscopy" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="90"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yS-d1-5Zn">
+                                <rect key="frame" x="144" y="53" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closePopUp:" destination="TbX-Rh-1oX" eventType="touchUpInside" id="Dbl-X8-dTe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.87249429030000003" blue="0.42178461" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="graphPopUpChild" destination="e1X-oK-2N5" id="DnD-0J-Fzw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L57-I6-sHt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850" y="341"/>
         </scene>
     </scenes>
 </document>

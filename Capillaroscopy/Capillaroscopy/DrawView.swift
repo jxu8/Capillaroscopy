@@ -28,7 +28,8 @@ class DrawView: UIView {
     
     override func draw (_ rect: CGRect){
         //Draw finished lines in black
-        UIColor.black.setStroke()
+        let lineColor = UIColor.init(red: 0.2, green: 0.7, blue: 0.5, alpha: 0.2)
+        lineColor.setStroke()
         for line in finishedLines{
             stroke(line)
         }
