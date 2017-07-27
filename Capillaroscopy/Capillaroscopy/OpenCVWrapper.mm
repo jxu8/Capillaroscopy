@@ -26,9 +26,7 @@ typedef cv::Vec<uchar,1> pixelIntensity;
         cv::cvtColor(imageMat, imageMat, CV_RGB2GRAY); //make all images grayscale which the one-channel vector can hold
     }
     //cout << "image type is " << imageMat.type();
-    
     //make sure pixel width, height, and voxel depth is 1.0 (can check in fiji)
-    
     //array of x coordinates
     int countX = [endpointsXCoordinates count];
      float *arrayXCoordinates = new float[countX];

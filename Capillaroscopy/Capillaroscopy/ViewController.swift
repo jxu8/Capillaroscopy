@@ -87,7 +87,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func resetDrawView(_ sender: UIButton) {
+        //resets lines
         drawViewCanvas.resetDrawView()
+        
+        //resets data - these arrays of coordinates are where the data begins and passed to opencv, so emptying these will make sure opencv starts anew as well
+        arrayXCoordinates.removeAllObjects()
+        arrayYCoordinates.removeAllObjects()
+        
     }
 
     @IBAction func getCoordinates(_ sender: UIButton) {
@@ -106,6 +112,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         for i in 0..<arrayOfIntensityValuesInSwift.count {
             print (arrayOfIntensityValuesInSwift[i])
         }
+        print("----------------")
     }
 
     @IBAction func showGraphPopUp(_ sender: UIButton) {
