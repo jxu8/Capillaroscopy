@@ -16,12 +16,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var graphPopUp: GraphPopUpView!
     let arrayXCoordinates = NSMutableArray()
     let arrayYCoordinates = NSMutableArray()
-    var arrayOfIntensityValuesInSwift = NSMutableArray()
+    var arrayOfIntensityValuesInSwiftAsNSMutableArray = NSMutableArray()
+    var arrayOfIntensityValuesInSwiftAsIntegerArray :[Int] = []
+    var graphPopUpViewController = GraphPopUpViewController ()
+    var arrayOfDistanceForXAxis: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         graphPopUp.isHidden = true
-
         
         //Dragging the graph pop up view
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.wasDragged(_:)))
@@ -32,23 +34,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    //MARK: Methods
-    
-        //Give access to parent graph pop up view to child graph pop up view controller so that it can be closed from the child graph pop up view controller
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let graphPopUpViewController = segue.destination as! GraphPopUpViewController
-        graphPopUpViewController.graphPopUpParent = graphPopUp
-    }
-    
-    //Dragging graph pop up view method
-    func wasDragged(_ gesture: UIPanGestureRecognizer){
-        let translation = gesture.translation(in: self.view)
-        let popUp = gesture.view!
-        popUp.center = CGPoint(x: popUp.center.x + translation.x, y: popUp.center.y + translation.y)
-        gesture.setTranslation(CGPoint.zero, in: self.view)
-    }
-
     
     //MARK: UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
@@ -70,7 +55,43 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
     
+    //MARK: Methods - this triggers before actions
     
+    //Allow child viewcontroller (graph pop up viewcontroller) and parent viewcontroller to interact
+    //spin.atomicobject.com/2016/03/30/ios-container-view-pass-data/
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let graphPopUpViewController = segue.destination as! GraphPopUpViewController
+        
+        //give access to parent viewcontroller to child viewcontroller
+        graphPopUpViewController.graphPopUpParent = graphPopUp
+        graphPopUpViewController.mainParentViewController = self
+        
+        //give access to child viewcontroller to parent viewcontroller
+        self.graphPopUpViewController = graphPopUpViewController
+    }
+    
+    //Dragging graph pop up view method
+    func wasDragged(_ gesture: UIPanGestureRecognizer){
+        let translation = gesture.translation(in: self.view)
+        let popUp = gesture.view!
+        popUp.center = CGPoint(x: popUp.center.x + translation.x, y: popUp.center.y + translation.y)
+        gesture.setTranslation(CGPoint.zero, in: self.view)
+    }
+    
+    //same as resetDrawView but without connection to @IBAction
+    func resetDrawViewWithoutButton(){
+        //resets lines
+        drawViewCanvas.resetDrawView()
+        
+        //resets data - these arrays of coordinates are where the data begins and passed to opencv, so emptying these will make sure opencv starts anew as well
+        arrayXCoordinates.removeAllObjects()
+        arrayYCoordinates.removeAllObjects()
+        
+        //empties arrays passed to line chart
+        arrayOfDistanceForXAxis.removeAll()
+        arrayOfIntensityValuesInSwiftAsIntegerArray.removeAll()
+    }
+
     //MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UIButton) {
         
@@ -94,29 +115,46 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         arrayXCoordinates.removeAllObjects()
         arrayYCoordinates.removeAllObjects()
         
+        //empties arrays passed to line chart
+        arrayOfDistanceForXAxis.removeAll()
+        arrayOfIntensityValuesInSwiftAsIntegerArray.removeAll()
+        
     }
 
     @IBAction func getCoordinates(_ sender: UIButton) {
         //print(drawViewCanvas.coordinates)
         //print(photoImageView.frame.width, ", ", photoImageView.frame.height)
         
-        for Coordinate in drawViewCanvas.coordinates{
-            //x and y are the scaled locations on the image view, which will then be multiplied by the size of the actual photo
-            let x = (Float(Coordinate.x))/(Float(photoImageView.frame.width))
-            arrayXCoordinates.add(x)
-            let y = (Float(Coordinate.y))/(Float(photoImageView.frame.height))
-            arrayYCoordinates.add(y)
-        }
-        
-        arrayOfIntensityValuesInSwift = OpenCVWrapper.getPixelIntensity(photoImageView.image, withEndpointsX:arrayXCoordinates, withEndpointsY:arrayYCoordinates)
-        for i in 0..<arrayOfIntensityValuesInSwift.count {
-            print (arrayOfIntensityValuesInSwift[i])
-        }
-        print("----------------")
-    }
+        //will only show coordinates if array for linechart is empty so data is not duplicated
+        if arrayOfIntensityValuesInSwiftAsIntegerArray.isEmpty{
+            for Coordinate in drawViewCanvas.coordinates{
+                //x and y are the scaled locations on the image view, which will then be multiplied by the size of the actual photo
+                let x = (Float(Coordinate.x))/(Float(photoImageView.frame.width))
+                arrayXCoordinates.add(x)
+                let y = (Float(Coordinate.y))/(Float(photoImageView.frame.height))
+                arrayYCoordinates.add(y)
+            }
+            
+            //call opencv function
+            arrayOfIntensityValuesInSwiftAsNSMutableArray = OpenCVWrapper.getPixelIntensity(photoImageView.image, withEndpointsX:arrayXCoordinates, withEndpointsY:arrayYCoordinates)
+            
+            //convert NSNumber in NSMutableArray to Swift Integer Array
+            for i in 0 ..< arrayOfIntensityValuesInSwiftAsNSMutableArray.count{
+                arrayOfIntensityValuesInSwiftAsIntegerArray.append((arrayOfIntensityValuesInSwiftAsNSMutableArray[i] as AnyObject).integerValue)
+            }
+            //stackoverflow.com/questions/34012122/how-to-convert-swift-optional-nsnumber-to-optional-int-any-improvements-on-my
 
-    @IBAction func showGraphPopUp(_ sender: UIButton) {
-        graphPopUp.isHidden = false
+            //create an array that can be used for x axis and x axis starts at 0
+            for i in 0 ..< arrayOfIntensityValuesInSwiftAsIntegerArray.count{
+                arrayOfDistanceForXAxis.append(i)
+            }
+            
+            //pass data to graph pop up view controller (child container view controller) and tell it to draw the chart
+            self.graphPopUpViewController.setChart(dataPoints: arrayOfDistanceForXAxis, values: arrayOfIntensityValuesInSwiftAsIntegerArray)
+            
+            //show graph pop up
+            graphPopUp.isHidden = false
+        }
     }
 }
 

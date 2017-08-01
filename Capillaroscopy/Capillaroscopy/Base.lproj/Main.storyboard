@@ -29,17 +29,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5Y-v2-kOp">
-                                                <rect key="frame" x="0.0" y="0.0" width="43" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="116" height="30"/>
                                                 <state key="normal" title="Reset"/>
                                                 <connections>
                                                     <action selector="resetDrawView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zdf-ae-HlU"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkS-of-Yyz">
-                                                <rect key="frame" x="62" y="0.0" width="54" height="30"/>
-                                                <state key="normal" title="Analyze"/>
-                                                <connections>
-                                                    <action selector="showGraphPopUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ywf-In-NPc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0w-HI-Xu3">
@@ -70,7 +63,7 @@
                                 <gestureRecognizers/>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t0E-L7-NaX" customClass="GraphPopUpView" customModule="Capillaroscopy" customModuleProvider="target">
-                                <rect key="frame" x="20" y="555" width="335" height="90"/>
+                                <rect key="frame" x="20" y="489" width="335" height="156"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="TbX-Rh-1oX" kind="embed" identifier="segueForGraphPopUp" id="rh7-7b-sYL"/>
@@ -103,13 +96,20 @@
         <scene sceneID="WYj-63-kxk">
             <objects>
                 <viewController id="TbX-Rh-1oX" customClass="GraphPopUpViewController" customModule="Capillaroscopy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wKM-5R-qVj"/>
+                        <viewControllerLayoutGuide type="bottom" id="xxq-fc-Oa7"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="e1X-oK-2N5" customClass="GraphPopUpView" customModule="Capillaroscopy" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="335" height="90"/>
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="156"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yS-d1-5Zn">
-                                <rect key="frame" x="144" y="53" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2XS-CB-7CT" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="8" width="303" height="109"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yS-d1-5Zn">
+                                <rect key="frame" x="144" y="118" width="46" height="30"/>
                                 <state key="normal" title="Close"/>
                                 <connections>
                                     <action selector="closePopUp:" destination="TbX-Rh-1oX" eventType="touchUpInside" id="Dbl-X8-dTe"/>
@@ -117,14 +117,24 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.87249429030000003" blue="0.42178461" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1yS-d1-5Zn" firstAttribute="top" secondItem="2XS-CB-7CT" secondAttribute="bottom" constant="1" id="Dls-pC-WtB"/>
+                            <constraint firstItem="1yS-d1-5Zn" firstAttribute="leading" secondItem="e1X-oK-2N5" secondAttribute="leadingMargin" constant="128" id="L9U-9M-NtN"/>
+                            <constraint firstItem="xxq-fc-Oa7" firstAttribute="top" secondItem="1yS-d1-5Zn" secondAttribute="bottom" constant="8" id="Lv0-nq-9FW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1yS-d1-5Zn" secondAttribute="trailing" constant="129" id="Uto-MZ-TeY"/>
+                            <constraint firstItem="2XS-CB-7CT" firstAttribute="leading" secondItem="e1X-oK-2N5" secondAttribute="leadingMargin" id="ftM-kI-cIa"/>
+                            <constraint firstItem="2XS-CB-7CT" firstAttribute="centerX" secondItem="1yS-d1-5Zn" secondAttribute="centerX" id="h1l-30-6Yo"/>
+                            <constraint firstItem="2XS-CB-7CT" firstAttribute="top" secondItem="wKM-5R-qVj" secondAttribute="bottom" constant="8" symbolic="YES" id="i0R-d9-iDw"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
-                        <outlet property="graphPopUpChild" destination="e1X-oK-2N5" id="DnD-0J-Fzw"/>
+                        <outlet property="lineChartView" destination="2XS-CB-7CT" id="o64-xY-WR5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L57-I6-sHt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850" y="341"/>
+            <point key="canvasLocation" x="848.79999999999995" y="340.92953523238384"/>
         </scene>
     </scenes>
 </document>

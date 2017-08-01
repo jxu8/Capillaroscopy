@@ -18,7 +18,9 @@
 		395496D11F05CCD80088429A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395496D01F05CCD80088429A /* Line.swift */; };
 		395496D31F05D2330088429A /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395496D21F05D2330088429A /* opencv2.framework */; };
 		395496D91F05D4500088429A /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 395496D81F05D4500088429A /* OpenCVWrapper.mm */; };
-		39B46F6B1F1038B200B64F74 /* GraphPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B46F6A1F1038B200B64F74 /* GraphPopUpView.swift */; };
+		397DA9A51F30CCBE00B6C310 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397DA9A21F30CAA100B6C310 /* Charts.framework */; };
+		397DA9A61F30CCBE00B6C310 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 397DA9A21F30CAA100B6C310 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		397DA9AB1F30CFC700B6C310 /* GraphPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397DA9AA1F30CFC700B6C310 /* GraphPopUpView.swift */; };
 		39B46F6D1F103C4500B64F74 /* GraphPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B46F6C1F103C4500B64F74 /* GraphPopUpViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +39,42 @@
 			remoteGlobalIDString = 39413D201EFC5B050028AE07;
 			remoteInfo = Capillaroscopy;
 		};
+		397DA9A11F30CAA100B6C310 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 397DA99C1F30CAA100B6C310 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		397DA9A31F30CAA100B6C310 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 397DA99C1F30CAA100B6C310 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		397DA9A71F30CCBE00B6C310 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 397DA99C1F30CAA100B6C310 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		397DA9A91F30CCBE00B6C310 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				397DA9A61F30CCBE00B6C310 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		39413D211EFC5B050028AE07 /* Capillaroscopy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capillaroscopy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,7 +96,8 @@
 		395496D41F05D2440088429A /* Capillaroscopy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Capillaroscopy-Bridging-Header.h"; sourceTree = "<group>"; };
 		395496D51F05D2440088429A /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		395496D81F05D4500088429A /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
-		39B46F6A1F1038B200B64F74 /* GraphPopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphPopUpView.swift; path = ../GraphPopUpView.swift; sourceTree = "<group>"; };
+		397DA99C1F30CAA100B6C310 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master-4/Charts.xcodeproj"; sourceTree = "<group>"; };
+		397DA9AA1F30CFC700B6C310 /* GraphPopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphPopUpView.swift; path = ../../../../.Trash/GraphPopUpView.swift; sourceTree = "<group>"; };
 		39B46F6C1F103C4500B64F74 /* GraphPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphPopUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				395496D31F05D2330088429A /* opencv2.framework in Frameworks */,
+				397DA9A51F30CCBE00B6C310 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				39413D231EFC5B050028AE07 /* Capillaroscopy */,
+				397DA99C1F30CAA100B6C310 /* Charts.xcodeproj */,
 				39413D381EFC5B050028AE07 /* CapillaroscopyTests */,
 				39413D431EFC5B050028AE07 /* CapillaroscopyUITests */,
 				39413D221EFC5B050028AE07 /* Products */,
@@ -121,7 +161,7 @@
 				395496CE1F05CCC50088429A /* DrawView.swift */,
 				39413D261EFC5B050028AE07 /* ViewController.swift */,
 				39413D281EFC5B050028AE07 /* Main.storyboard */,
-				39B46F6A1F1038B200B64F74 /* GraphPopUpView.swift */,
+				397DA9AA1F30CFC700B6C310 /* GraphPopUpView.swift */,
 				39B46F6C1F103C4500B64F74 /* GraphPopUpViewController.swift */,
 				39413D2B1EFC5B050028AE07 /* Assets.xcassets */,
 				39413D2D1EFC5B050028AE07 /* LaunchScreen.storyboard */,
@@ -148,6 +188,15 @@
 			path = CapillaroscopyUITests;
 			sourceTree = "<group>";
 		};
+		397DA99D1F30CAA100B6C310 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				397DA9A21F30CAA100B6C310 /* Charts.framework */,
+				397DA9A41F30CAA100B6C310 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,10 +207,12 @@
 				39413D1D1EFC5B050028AE07 /* Sources */,
 				39413D1E1EFC5B050028AE07 /* Frameworks */,
 				39413D1F1EFC5B050028AE07 /* Resources */,
+				397DA9A91F30CCBE00B6C310 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				397DA9A81F30CCBE00B6C310 /* PBXTargetDependency */,
 			);
 			name = Capillaroscopy;
 			productName = Capillaroscopy;
@@ -242,6 +293,12 @@
 			mainGroup = 39413D181EFC5B050028AE07;
 			productRefGroup = 39413D221EFC5B050028AE07 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 397DA99D1F30CAA100B6C310 /* Products */;
+					ProjectRef = 397DA99C1F30CAA100B6C310 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				39413D201EFC5B050028AE07 /* Capillaroscopy */,
@@ -250,6 +307,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		397DA9A21F30CAA100B6C310 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 397DA9A11F30CAA100B6C310 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		397DA9A41F30CAA100B6C310 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 397DA9A31F30CAA100B6C310 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		39413D1F1EFC5B050028AE07 /* Resources */ = {
@@ -283,7 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39B46F6B1F1038B200B64F74 /* GraphPopUpView.swift in Sources */,
+				397DA9AB1F30CFC700B6C310 /* GraphPopUpView.swift in Sources */,
 				39413D271EFC5B050028AE07 /* ViewController.swift in Sources */,
 				395496D91F05D4500088429A /* OpenCVWrapper.mm in Sources */,
 				395496D11F05CCD80088429A /* Line.swift in Sources */,
@@ -321,6 +395,11 @@
 			isa = PBXTargetDependency;
 			target = 39413D201EFC5B050028AE07 /* Capillaroscopy */;
 			targetProxy = 39413D411EFC5B050028AE07 /* PBXContainerItemProxy */;
+		};
+		397DA9A81F30CCBE00B6C310 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 397DA9A71F30CCBE00B6C310 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -438,6 +517,7 @@
 		39413D4A1EFC5B050028AE07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -457,6 +537,7 @@
 		39413D4B1EFC5B050028AE07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (

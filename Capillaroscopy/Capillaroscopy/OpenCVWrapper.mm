@@ -82,7 +82,7 @@ typedef cv::Vec<uchar,1> pixelIntensity;
     }
     
     //to see if opencv rendered the image correctly:
-    cv::imwrite("/Users/xujr/Desktop/test.tif", imageMat);
+    //cv::imwrite("/Users/xujr/Desktop/test.tif", imageMat);
     
 
     return allIntensityValuesForSwift;
