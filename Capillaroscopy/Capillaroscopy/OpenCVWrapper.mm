@@ -44,6 +44,7 @@ typedef cv::Vec<uchar,1> pixelIntensity;
     //create an array of points to use in lineiterator
     vector<cv::Point> arrayOfPoints(countX);
     for(int i = 0; i < countX; i++){
+        //multipled by rows and cols to find the coordinate on the actual photo
         cv::Point point (arrayXCoordinates[i]*imageMat.cols, arrayYCoordinates[i]*imageMat.rows);
         arrayOfPoints[i] = point;
         //cout << arrayOfPoints[i] << ",";
