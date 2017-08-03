@@ -24,10 +24,17 @@ class DrawView: UIView {
         path.move(to: line.begin)
         path.addLine(to: line.end)
         path.stroke()
+        
+        let endCircle = UIBezierPath(arcCenter: CGPoint(x:line.end.x, y:line.end.y), radius: CGFloat(2), startAngle: CGFloat(0), endAngle: CGFloat(M_PI * 2), clockwise: true)
+        let endCircleLayer = CAShapeLayer()
+        endCircleLayer.path = endCircle.cgPath
+        endCircleLayer.fillColor = UIColor.blue.cgColor
+        endCircleLayer.strokeColor = UIColor.blue.cgColor
+        endCircleLayer.lineWidth = 1.0
+        self.layer.addSublayer(endCircleLayer)
     }
     
     override func draw (_ rect: CGRect){
-        //Draw finished lines in black
         let lineColor = UIColor.init(red: 0.0, green: 0.0, blue: 1, alpha: 0.5)
         lineColor.setStroke()
         for line in finishedLines{
@@ -57,6 +64,7 @@ class DrawView: UIView {
         coordinates.removeAll()
         coordinatesTracker.removeAll()
         finishedLines.removeAll()
+        self.layer.sublayers = nil
         setNeedsDisplay()
     }
 }
