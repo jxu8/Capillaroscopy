@@ -22,6 +22,7 @@
 		397DA9A61F30CCBE00B6C310 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 397DA9A21F30CAA100B6C310 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		397DA9AB1F30CFC700B6C310 /* GraphPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397DA9AA1F30CFC700B6C310 /* GraphPopUpView.swift */; };
 		39B46F6D1F103C4500B64F74 /* GraphPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B46F6C1F103C4500B64F74 /* GraphPopUpViewController.swift */; };
+		39C0A2C71F34F03E00634F50 /* CurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0A2C61F34F03E00634F50 /* CurveAlgorithm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		397DA99C1F30CAA100B6C310 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master-4/Charts.xcodeproj"; sourceTree = "<group>"; };
 		397DA9AA1F30CFC700B6C310 /* GraphPopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphPopUpView.swift; path = ../../../../.Trash/GraphPopUpView.swift; sourceTree = "<group>"; };
 		39B46F6C1F103C4500B64F74 /* GraphPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphPopUpViewController.swift; sourceTree = "<group>"; };
+		39C0A2C61F34F03E00634F50 /* CurveAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveAlgorithm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				395496D01F05CCD80088429A /* Line.swift */,
 				395496CE1F05CCC50088429A /* DrawView.swift */,
 				39413D261EFC5B050028AE07 /* ViewController.swift */,
+				39C0A2C61F34F03E00634F50 /* CurveAlgorithm.swift */,
 				39413D281EFC5B050028AE07 /* Main.storyboard */,
 				397DA9AA1F30CFC700B6C310 /* GraphPopUpView.swift */,
 				39B46F6C1F103C4500B64F74 /* GraphPopUpViewController.swift */,
@@ -267,6 +270,7 @@
 				TargetAttributes = {
 					39413D201EFC5B050028AE07 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8NTH6PGNHP;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -360,6 +364,7 @@
 				397DA9AB1F30CFC700B6C310 /* GraphPopUpView.swift in Sources */,
 				39413D271EFC5B050028AE07 /* ViewController.swift in Sources */,
 				395496D91F05D4500088429A /* OpenCVWrapper.mm in Sources */,
+				39C0A2C71F34F03E00634F50 /* CurveAlgorithm.swift in Sources */,
 				395496D11F05CCD80088429A /* Line.swift in Sources */,
 				39413D251EFC5B050028AE07 /* AppDelegate.swift in Sources */,
 				395496CF1F05CCC50088429A /* DrawView.swift in Sources */,
@@ -520,11 +525,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 8NTH6PGNHP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Capillaroscopy",
 				);
 				INFOPLIST_FILE = Capillaroscopy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jamesxu.Capillaroscopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -540,11 +547,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 8NTH6PGNHP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Capillaroscopy",
 				);
 				INFOPLIST_FILE = Capillaroscopy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jamesxu.Capillaroscopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";

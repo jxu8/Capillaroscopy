@@ -25,7 +25,7 @@ class DrawView: UIView {
         path.addLine(to: line.end)
         path.stroke()
         
-        let endCircle = UIBezierPath(arcCenter: CGPoint(x:line.end.x, y:line.end.y), radius: CGFloat(2), startAngle: CGFloat(0), endAngle: CGFloat(M_PI * 2), clockwise: true)
+        let endCircle = UIBezierPath(arcCenter: CGPoint(x:line.end.x, y:line.end.y), radius: CGFloat(1), startAngle: CGFloat(0), endAngle: CGFloat(M_PI * 2), clockwise: true)
         let endCircleLayer = CAShapeLayer()
         endCircleLayer.path = endCircle.cgPath
         endCircleLayer.fillColor = UIColor.blue.cgColor

@@ -21,10 +21,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let arrayYCoordinates = NSMutableArray()
     var arrayOfIntensityValuesInSwiftAsNSMutableArray = NSMutableArray()
     var arrayOfIntensityValuesInSwiftAsIntegerArray :[Int] = []
+    var arrayOfIntensityValuesInSwiftAsNegativeDoubleArray: [Double] = []
+    var signals: [Int] = []
     var graphPopUpViewController = GraphPopUpViewController ()
     var arrayOfDistanceForXAxis: [Double] = []
     var lengthOfImage: Double? = nil
     var unitOfGraph: String? = ""
+    var curveAlgorithm = CurveAlgorithm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,6 +121,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //empties arrays passed to line chart
         arrayOfDistanceForXAxis.removeAll()
         arrayOfIntensityValuesInSwiftAsIntegerArray.removeAll()
+        
+        signals.removeAll()
+        
     }
 
     //MARK: Actions
@@ -146,6 +152,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //empties arrays passed to line chart
         arrayOfDistanceForXAxis.removeAll()
         arrayOfIntensityValuesInSwiftAsIntegerArray.removeAll()
+        
+        signals.removeAll()
         
     }
 
@@ -181,16 +189,32 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 arrayOfDistanceForXAxis.append(sumOfPixelsAlongLine)
             }
             
+            //convert integer array into double array for curve algorithm
+            for i in 0 ..< arrayOfIntensityValuesInSwiftAsIntegerArray.count {
+                arrayOfIntensityValuesInSwiftAsNegativeDoubleArray.append(-1 * Double(arrayOfIntensityValuesInSwiftAsIntegerArray[i]))
+            }
+            
+            // Run thresold
+            let signalsCounter = curveAlgorithm.ThresholdingAlgo(y: arrayOfIntensityValuesInSwiftAsNegativeDoubleArray, lag: 1, threshold: 2, influence: 0.1)
+            for i in 0 ..< signalsCounter.count {
+                signals.append(signalsCounter[i])
+                print(i, ":", signals[i])
+            }
+            
             //set unit of graph
             self.graphPopUpViewController.setUnitOfGraph(unitName: unitOfGraph!)
             
             //pass data to graph pop up view controller (child container view controller) and tell it to draw the chart
-            self.graphPopUpViewController.setChart(dataPoints: arrayOfDistanceForXAxis, values: arrayOfIntensityValuesInSwiftAsIntegerArray)
+            self.graphPopUpViewController.setChart(dataPoints: arrayOfDistanceForXAxis, values: signals)
             
             //show graph pop up
             graphPopUp.isHidden = false
+            
+        }
+
+        
         }
     }
     
-}
+
 
