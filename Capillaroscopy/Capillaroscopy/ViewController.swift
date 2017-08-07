@@ -228,7 +228,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                             zeroesCounter = 0 //reset zero counter for next signal search
                         }
                         
-                        if signalsViewController[i+1] == 0 {
+                        if signalsViewController[i+1] == 0 || signalsViewController.last == 1{
                             zeroesCounter += 1 //begin zero counter to search for next signal
                         }
                         
