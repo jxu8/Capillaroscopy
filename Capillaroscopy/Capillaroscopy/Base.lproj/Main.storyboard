@@ -55,17 +55,23 @@
                                         <rect key="frame" x="0.0" y="40" width="343" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Length of Picture" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xKu-yg-5HM">
-                                                <rect key="frame" x="0.0" y="0.0" width="170" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Unit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uey-4B-g5r">
-                                                <rect key="frame" x="190" y="0.0" width="153" height="30"/>
+                                                <rect key="frame" x="103.5" y="0.0" width="85.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="RhE-P2-TS0">
+                                                <rect key="frame" x="207" y="0.0" width="138" height="31"/>
+                                                <connections>
+                                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="dux-of-1Gd"/>
+                                                </connections>
+                                            </slider>
                                         </subviews>
                                     </stackView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" translatesAutoresizingMaskIntoConstraints="NO" id="ITH-0d-fKM">
@@ -107,6 +113,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="calibrateSlider" destination="RhE-P2-TS0" id="wRt-ke-C7A"/>
                         <outlet property="drawViewCanvas" destination="WFP-wr-zMI" id="SLX-rg-cAJ"/>
                         <outlet property="graphPopUp" destination="t0E-L7-NaX" id="ggP-6f-HLj"/>
                         <outlet property="photoImageView" destination="ITH-0d-fKM" id="CuJ-b6-dtJ"/>
@@ -131,11 +138,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2XS-CB-7CT" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="8" width="311" height="133"/>
+                                <rect key="frame" x="16" y="8" width="311" height="122"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EE4-h9-Eqe">
+                                <rect key="frame" x="16" y="127" width="311" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yS-d1-5Zn">
-                                <rect key="frame" x="144" y="143" width="54" height="25"/>
+                                <rect key="frame" x="146" y="145" width="51" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Close"/>
                                 <connections>
                                     <action selector="closePopUp:" destination="TbX-Rh-1oX" eventType="touchUpInside" id="Dbl-X8-dTe"/>
@@ -144,19 +158,23 @@
                         </subviews>
                         <color key="backgroundColor" red="0.56168988967004818" green="0.82644866863598043" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="1yS-d1-5Zn" secondAttribute="trailing" constant="129" id="42T-pZ-qtj"/>
-                            <constraint firstItem="2XS-CB-7CT" firstAttribute="trailing" secondItem="e1X-oK-2N5" secondAttribute="trailingMargin" id="5G2-CH-mmV"/>
-                            <constraint firstItem="xxq-fc-Oa7" firstAttribute="top" secondItem="2XS-CB-7CT" secondAttribute="bottom" constant="27" id="8cs-VJ-mUK"/>
-                            <constraint firstItem="1yS-d1-5Zn" firstAttribute="leading" secondItem="e1X-oK-2N5" secondAttribute="leadingMargin" constant="128" id="FTi-UT-EBo"/>
-                            <constraint firstItem="1yS-d1-5Zn" firstAttribute="top" secondItem="2XS-CB-7CT" secondAttribute="bottom" constant="2" id="S6D-Iw-dQH"/>
-                            <constraint firstItem="xxq-fc-Oa7" firstAttribute="top" secondItem="1yS-d1-5Zn" secondAttribute="bottom" id="VUb-ES-ZHR"/>
-                            <constraint firstItem="2XS-CB-7CT" firstAttribute="leading" secondItem="e1X-oK-2N5" secondAttribute="leadingMargin" id="e37-ED-BFZ"/>
-                            <constraint firstItem="1yS-d1-5Zn" firstAttribute="top" secondItem="wKM-5R-qVj" secondAttribute="bottom" constant="143" id="v8A-MY-Ho6"/>
-                            <constraint firstItem="2XS-CB-7CT" firstAttribute="top" secondItem="wKM-5R-qVj" secondAttribute="bottom" constant="8" id="zRx-PK-zgY"/>
+                            <constraint firstItem="2XS-CB-7CT" firstAttribute="leading" secondItem="e1X-oK-2N5" secondAttribute="leadingMargin" id="6a9-qf-z8a"/>
+                            <constraint firstItem="EE4-h9-Eqe" firstAttribute="trailing" secondItem="e1X-oK-2N5" secondAttribute="trailingMargin" id="6fc-nb-hci"/>
+                            <constraint firstItem="2XS-CB-7CT" firstAttribute="trailing" secondItem="e1X-oK-2N5" secondAttribute="trailingMargin" id="Cpz-V1-DFQ"/>
+                            <constraint firstItem="1yS-d1-5Zn" firstAttribute="top" secondItem="wKM-5R-qVj" secondAttribute="bottom" constant="145" id="NIY-Pa-HuX"/>
+                            <constraint firstItem="xxq-fc-Oa7" firstAttribute="top" secondItem="1yS-d1-5Zn" secondAttribute="bottom" id="Zpa-bf-PPV"/>
+                            <constraint firstItem="EE4-h9-Eqe" firstAttribute="top" secondItem="wKM-5R-qVj" secondAttribute="bottom" constant="127" id="crB-bs-hmz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1yS-d1-5Zn" secondAttribute="trailing" constant="130" id="e6r-JB-PBv"/>
+                            <constraint firstItem="xxq-fc-Oa7" firstAttribute="top" secondItem="EE4-h9-Eqe" secondAttribute="bottom" constant="23" id="lTP-A2-hSg"/>
+                            <constraint firstItem="1yS-d1-5Zn" firstAttribute="leading" secondItem="e1X-oK-2N5" secondAttribute="leadingMargin" constant="130" id="nwv-nv-rCV"/>
+                            <constraint firstItem="2XS-CB-7CT" firstAttribute="top" secondItem="wKM-5R-qVj" secondAttribute="bottom" constant="8" id="pSb-Ix-Qjk"/>
+                            <constraint firstItem="xxq-fc-Oa7" firstAttribute="top" secondItem="2XS-CB-7CT" secondAttribute="bottom" constant="38" id="pef-kb-ZvZ"/>
+                            <constraint firstItem="EE4-h9-Eqe" firstAttribute="leading" secondItem="e1X-oK-2N5" secondAttribute="leadingMargin" id="pgG-Ts-Fvy"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
+                        <outlet property="densityLabel" destination="EE4-h9-Eqe" id="tIm-nf-RgN"/>
                         <outlet property="lineChartView" destination="2XS-CB-7CT" id="o64-xY-WR5"/>
                     </connections>
                 </viewController>

@@ -10,17 +10,20 @@ import UIKit
 import Charts
 
 class GraphPopUpViewController: UIViewController {
-
+    
     var graphPopUpParent: GraphPopUpView!
     @IBOutlet weak var lineChartView: LineChartView!
+    @IBOutlet weak var densityLabel: UILabel!
     var mainParentViewController: ViewController!
     var unitName: String = ""
+    var numberOfCapillaries: Int = 0
+    var distanceSelected: Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -32,8 +35,10 @@ class GraphPopUpViewController: UIViewController {
     }
     
     //MARK: Methods
-    func setUnitOfGraph (unitName: String) {
+    func setUnitOfGraph (unitName: String, signals: Int, distanceSelected: Double) {
         self.unitName = unitName
+        self.numberOfCapillaries = signals
+        self.distanceSelected = distanceSelected
     }
     
     func setChart(dataPoints: [Double], values: [Int]) {
@@ -43,14 +48,14 @@ class GraphPopUpViewController: UIViewController {
         lineChartView.rightAxis.enabled = false
         lineChartView.legend.enabled = false
         lineChartView.leftAxis.drawLabelsEnabled = false
-        lineChartView.chartDescription?.text = self.unitName
+        lineChartView.chartDescription?.enabled = false
         
         var dataEntries: [ChartDataEntry] = []
         for i in 0..<dataPoints.count {
             let dataEntry = ChartDataEntry(x: dataPoints[i], y: Double(values[i]))
             dataEntries.append(dataEntry)
-        
-            let lineChartDataSet = LineChartDataSet(values: dataEntries, label: self.unitName)
+            
+            let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "No label")
             var dataSets = [IChartDataSet]()
             dataSets.append(lineChartDataSet)
             lineChartDataSet.circleRadius = 0
@@ -61,9 +66,13 @@ class GraphPopUpViewController: UIViewController {
             
             lineChartView.data = lineChartData
             
-//github.com/danielgindi/Charts/issues/1502
+            densityLabel.text = "Density = " + String(self.numberOfCapillaries) + " capillaries/" + String(self.distanceSelected) + " " + self.unitName
+            
+            //github.com/danielgindi/Charts/issues/1502
+            //www.appcoda.com/ios-charts-api-tutorial/
             
         }
     }
-
+    
+    
 }

@@ -9,6 +9,9 @@
 import Foundation
 
 class CurveAlgorithm {
+    
+    var signalsClassLevel: [Int] = []
+    
     // Smooth z-score thresholding filter
     // Function to calculate the arithmetic mean
     func arithmeticMean(array: [Double]) -> Double {
@@ -37,7 +40,7 @@ class CurveAlgorithm {
     }
     
     // Smooth z-score thresholding filter
-    func ThresholdingAlgo(y: [Double],lag: Int,threshold: Double,influence: Double) -> [Int] {
+    func ThresholdingAlgo(y: [Double],lag: Int,threshold: Double,influence: Double) {
         
         // Create arrays
         var signals   = Array(repeating: 0, count: y.count)
@@ -58,10 +61,9 @@ class CurveAlgorithm {
         for i in lag...y.count-1 {
             if abs(y[i] - avgFilter[i-1]) > threshold*stdFilter[i-1] {
                 if y[i] > avgFilter[i-1] {
-                    //signals[i] = 1      // Positive signal
+                    signals[i] = 1      // Positive signal
                 } else {
-                    // Negative signals are turned off for this application
-                    signals[i] = -1       // Negative signal
+                    //signals[i] = -1       // Negative signal
                 }
                 filteredY[i] = influence*y[i] + (1-influence)*filteredY[i-1]
             } else {
@@ -73,6 +75,8 @@ class CurveAlgorithm {
             stdFilter[i] = standardDeviation(array: subArray(array: filteredY, s: i-lag, e: i))
         }
         
-        return signals
+        signalsClassLevel = signals
+        
     }
+    
 }

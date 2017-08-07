@@ -20,9 +20,9 @@
 		395496D91F05D4500088429A /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 395496D81F05D4500088429A /* OpenCVWrapper.mm */; };
 		397DA9A51F30CCBE00B6C310 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397DA9A21F30CAA100B6C310 /* Charts.framework */; };
 		397DA9A61F30CCBE00B6C310 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 397DA9A21F30CAA100B6C310 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		397DA9AB1F30CFC700B6C310 /* GraphPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397DA9AA1F30CFC700B6C310 /* GraphPopUpView.swift */; };
 		39B46F6D1F103C4500B64F74 /* GraphPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B46F6C1F103C4500B64F74 /* GraphPopUpViewController.swift */; };
 		39C0A2C71F34F03E00634F50 /* CurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0A2C61F34F03E00634F50 /* CurveAlgorithm.swift */; };
+		39D44BAB1F38ADC3004A2E5F /* GraphPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D44BAA1F38ADC3004A2E5F /* GraphPopUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,9 +98,9 @@
 		395496D51F05D2440088429A /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		395496D81F05D4500088429A /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
 		397DA99C1F30CAA100B6C310 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master-4/Charts.xcodeproj"; sourceTree = "<group>"; };
-		397DA9AA1F30CFC700B6C310 /* GraphPopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphPopUpView.swift; path = ../../../../.Trash/GraphPopUpView.swift; sourceTree = "<group>"; };
 		39B46F6C1F103C4500B64F74 /* GraphPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphPopUpViewController.swift; sourceTree = "<group>"; };
 		39C0A2C61F34F03E00634F50 /* CurveAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveAlgorithm.swift; sourceTree = "<group>"; };
+		39D44BAA1F38ADC3004A2E5F /* GraphPopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphPopUpView.swift; path = ../GraphPopUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +164,7 @@
 				39413D261EFC5B050028AE07 /* ViewController.swift */,
 				39C0A2C61F34F03E00634F50 /* CurveAlgorithm.swift */,
 				39413D281EFC5B050028AE07 /* Main.storyboard */,
-				397DA9AA1F30CFC700B6C310 /* GraphPopUpView.swift */,
+				39D44BAA1F38ADC3004A2E5F /* GraphPopUpView.swift */,
 				39B46F6C1F103C4500B64F74 /* GraphPopUpViewController.swift */,
 				39413D2B1EFC5B050028AE07 /* Assets.xcassets */,
 				39413D2D1EFC5B050028AE07 /* LaunchScreen.storyboard */,
@@ -361,7 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				397DA9AB1F30CFC700B6C310 /* GraphPopUpView.swift in Sources */,
+				39D44BAB1F38ADC3004A2E5F /* GraphPopUpView.swift in Sources */,
 				39413D271EFC5B050028AE07 /* ViewController.swift in Sources */,
 				395496D91F05D4500088429A /* OpenCVWrapper.mm in Sources */,
 				39C0A2C71F34F03E00634F50 /* CurveAlgorithm.swift in Sources */,
