@@ -8,15 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, calibrationProtocol {
     
     //MARK: Properties
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var drawViewCanvas: DrawView!
     @IBOutlet weak var graphPopUp: GraphPopUpView!
-    @IBOutlet weak var setLengthTextField: UITextField!
-    @IBOutlet weak var setUnitTextField: UITextField!
-    @IBOutlet weak var calibrateSlider: UISlider!
     
     let arrayXCoordinates = NSMutableArray()
     let arrayYCoordinates = NSMutableArray()
@@ -26,10 +23,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var signalsViewController: [Int] = []
     var graphPopUpViewController = GraphPopUpViewController ()
     var arrayOfDistanceForXAxis: [Double] = []
-    var lengthOfImage: Double? = nil
-    var unitOfGraph: String? = ""
-    var calibrateZeroesCounter: Int = 20
     var curveAlgorithm = CurveAlgorithm()
+    
+    //values sent from calibrateviewcontroller
+    var lengthOfImage: Double?
+    var unitOfGraph: String?
+    var calibrateZeroesCounter: Int = 20
+    var calibrateThreshold: Double = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,16 +39,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.wasDragged(_:)))
         graphPopUp.addGestureRecognizer(gesture)
         
-        //Handle the length and unit that the user inputs
-        setLengthTextField.delegate = self
-        setUnitTextField.delegate = self
-        setLengthTextField.tag = 1
-        setUnitTextField.tag = 2
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: calibrateProtocol functions
+    func setLengthTextField(valueSent: Double) {
+        self.lengthOfImage = valueSent
+    }
+    
+    func setUnitTextField(valueSent: String) {
+        self.unitOfGraph = valueSent
+    }
+    
+    func setZeroesCounter(valueSent: Int) {
+        self.calibrateZeroesCounter = valueSent
+    }
+    
+    func setThreshold(valueSent: Double) {
+        self.calibrateThreshold = valueSent
     }
     
     //MARK: UIImagePickerControllerDelegate
@@ -71,37 +83,42 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
     
-    //MARK:UITextFieldDelegate
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //Hide the keyboard
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if (textField.tag == 1){
-            lengthOfImage = Double(textField.text!)
-        }
-        
-        if (textField.tag == 2){
-            unitOfGraph = textField.text!
-        }
-        
-    }
     
     //MARK: Methods - this triggers before actions
     
     //Allow child viewcontroller (graph pop up viewcontroller) and parent viewcontroller to interact
+    //Also allow data to be sent back from calibrate view controller to viewcontroller
     //spin.atomicobject.com/2016/03/30/ios-container-view-pass-data/
+    //matteomanferdini.com/how-ios-view-controllers-communicate-with-each-other/
+    //swiftdeveloperblog.com/pass-information-back-to-the-previous-view-controller/
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let graphPopUpViewController = segue.destination as! GraphPopUpViewController
+        if (segue.identifier == "segueForGraphPopUp"){
+            let graphPopUpViewController = segue.destination as! GraphPopUpViewController
+            
+            //give access to parent viewcontroller to child viewcontroller
+            graphPopUpViewController.graphPopUpParent = graphPopUp
+            graphPopUpViewController.mainParentViewController = self
+            
+            //give access to child viewcontroller to parent viewcontroller
+            self.graphPopUpViewController = graphPopUpViewController
+        }
         
-        //give access to parent viewcontroller to child viewcontroller
-        graphPopUpViewController.graphPopUpParent = graphPopUp
-        graphPopUpViewController.mainParentViewController = self
-        
-        //give access to child viewcontroller to parent viewcontroller
-        self.graphPopUpViewController = graphPopUpViewController
+        if let calibrateViewController = segue.destination as? CalibrateViewController {
+            //pass data backward from calibrateViewController to ViewController
+            calibrateViewController.calibrationDelegate = self
+            if lengthOfImage != nil {
+                calibrateViewController.length = lengthOfImage!
+            }
+            if unitOfGraph != nil {
+                calibrateViewController.unit = unitOfGraph!
+            }
+            if calibrateZeroesCounter != 20 {
+                calibrateViewController.zeroesCounter = calibrateZeroesCounter
+            }
+            if calibrateThreshold != 3 {
+                calibrateViewController.threshold = calibrateThreshold
+            }
+        }
     }
     
     //Dragging graph pop up view method
@@ -131,6 +148,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     //MARK: Actions
+    
     @IBAction func selectImageFromPhotoLibrary(_ sender: UIButton) {
         
         //UIImagePickerController is a view controller that lets a user pick media from their photo library.
@@ -161,17 +179,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         curveAlgorithm.signalsClassLevel.removeAll()
         
     }
-    
-    @IBAction func sliderValueChanged(_ sender: UISlider) {
-        calibrateZeroesCounter = Int(sender.value)
-    }
+
     
     @IBAction func getCoordinates(_ sender: UIButton) {
         //print(drawViewCanvas.coordinates)
         //print(photoImageView.frame.width, ", ", photoImageView.frame.height)
-        
         //will only show coordinates if array for linechart is empty so data is not duplicated and if user inputted length of image for x axis scale
-        if arrayOfIntensityValuesInSwiftAsIntegerArray.isEmpty && lengthOfImage != nil {
+        if arrayOfIntensityValuesInSwiftAsIntegerArray.isEmpty && lengthOfImage != nil && unitOfGraph != nil{
             for Coordinate in drawViewCanvas.coordinates{
                 //x and y are the scaled locations on the image view, which will then be multiplied by the size of the actual photo
                 let x = (Float(Coordinate.x))/(Float(photoImageView.frame.width))
@@ -179,6 +193,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 let y = (Float(Coordinate.y))/(Float(photoImageView.frame.height))
                 arrayYCoordinates.add(y)
             }
+            
             
             //call opencv function
             arrayOfIntensityValuesInSwiftAsNSMutableArray = OpenCVWrapper.getPixelIntensity(photoImageView.image, withEndpointsX:arrayXCoordinates, withEndpointsY:arrayYCoordinates)
@@ -213,7 +228,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 //in the algorithm is used (array can be too big)
                 if arrayOfIntensityValuesInSwiftAsIntegerArray.count > 10 {
                     // Run thresold
-                    curveAlgorithm.ThresholdingAlgo(y: arrayOfIntensityValuesInSwiftAsDoubleArray, lag: 10, threshold: 3, influence: 0.9)
+                    curveAlgorithm.ThresholdingAlgo(y: arrayOfIntensityValuesInSwiftAsDoubleArray, lag: 10, threshold: calibrateThreshold, influence: 0.9)
                     signalsViewController = curveAlgorithm.signalsClassLevel
                 }
                 
@@ -248,7 +263,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 zeroesCounter = 0
                 
                 //pass data to graph pop up view controller (child container view controller) and tell it to draw the chart
-                self.graphPopUpViewController.setChart(dataPoints: arrayOfDistanceForXAxis, values: arrayOfIntensityValuesInSwiftAsIntegerArray)
+                self.graphPopUpViewController.setChart(dataPoints: arrayOfDistanceForXAxis, values: signalsViewController)
                 
                 //show graph pop up
                 graphPopUp.isHidden = false

@@ -23,6 +23,7 @@
 		39B46F6D1F103C4500B64F74 /* GraphPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B46F6C1F103C4500B64F74 /* GraphPopUpViewController.swift */; };
 		39C0A2C71F34F03E00634F50 /* CurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0A2C61F34F03E00634F50 /* CurveAlgorithm.swift */; };
 		39D44BAB1F38ADC3004A2E5F /* GraphPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D44BAA1F38ADC3004A2E5F /* GraphPopUpView.swift */; };
+		39D44BAD1F391966004A2E5F /* CalibrateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D44BAC1F391966004A2E5F /* CalibrateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		39B46F6C1F103C4500B64F74 /* GraphPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphPopUpViewController.swift; sourceTree = "<group>"; };
 		39C0A2C61F34F03E00634F50 /* CurveAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveAlgorithm.swift; sourceTree = "<group>"; };
 		39D44BAA1F38ADC3004A2E5F /* GraphPopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphPopUpView.swift; path = ../GraphPopUpView.swift; sourceTree = "<group>"; };
+		39D44BAC1F391966004A2E5F /* CalibrateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				39413D261EFC5B050028AE07 /* ViewController.swift */,
 				39C0A2C61F34F03E00634F50 /* CurveAlgorithm.swift */,
 				39413D281EFC5B050028AE07 /* Main.storyboard */,
+				39D44BAC1F391966004A2E5F /* CalibrateViewController.swift */,
 				39D44BAA1F38ADC3004A2E5F /* GraphPopUpView.swift */,
 				39B46F6C1F103C4500B64F74 /* GraphPopUpViewController.swift */,
 				39413D2B1EFC5B050028AE07 /* Assets.xcassets */,
@@ -369,6 +372,7 @@
 				39413D251EFC5B050028AE07 /* AppDelegate.swift in Sources */,
 				395496CF1F05CCC50088429A /* DrawView.swift in Sources */,
 				39B46F6D1F103C4500B64F74 /* GraphPopUpViewController.swift in Sources */,
+				39D44BAD1F391966004A2E5F /* CalibrateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +542,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Capillaroscopy/Capillaroscopy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -559,6 +564,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Capillaroscopy/Capillaroscopy-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
